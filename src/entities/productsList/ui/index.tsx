@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import style from './style.module.scss';
 import { useStore } from 'effector-react';
 import { $filteredProducts } from 'entities/productsListFilters';
