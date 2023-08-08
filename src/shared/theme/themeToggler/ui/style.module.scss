@@ -1,0 +1,32 @@
+@import '../../../../app/style.module.scss';
+
+.simpleToggler {
+  width: var(--toggler-width);
+  height: var(--toggler-height);
+  border-radius: var(--toggler-width);
+  padding: var(--toggler-padding);
+  background-color: var(--theme-togggler-background);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+  transition: var(--transition-background);
+
+  .icon {
+    width: var(--ball-diameter);
+    height: var(--ball-diameter);
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    transition: var(--transition-background), var(--transition);
+  }
+
+  .ball {
+    width: var(--ball-diameter);
+    height: var(--ball-diameter);
+    background-color: var(--background-primary-light);
+    border-radius: 50%;
+    transition: var(--transition);
+  }
+}

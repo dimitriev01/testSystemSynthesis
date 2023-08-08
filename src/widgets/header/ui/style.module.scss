@@ -1,0 +1,17 @@
+  @import '../../../app/style.module.scss';
+
+  .header {
+    padding: 9px 0;
+    border-bottom: 1px solid var(--header-border-color);
+
+    .headerContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .headerTitle {
+      font-size: 24px;
+      font-weight: var(--font-weight-bold);
+    }
+  }
