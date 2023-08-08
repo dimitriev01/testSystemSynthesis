@@ -1,0 +1,45 @@
+@import "./styles/index.scss";
+
+:root {
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Roboto';
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --transition: all .2s ease;
+  --transition-background: backgroundColor 0.2s ease;
+  --background-primary-light: #fff;
+  --text-color-primary-light: #000;
+  --background-primary-dark: #1e1e1e;
+  --text-color-primary-dark: #fff;
+  --header-border-color-dark: #444;
+  --header-border-color-light: #e1e1e1;
+  --theme-togggler-background-dark: #c2c2c2;
+  --theme-togggler-background-light: #17161c;
+  --filter-text-color: #868686;
+  --filter-border-color-dark: #444;
+  --filter-border-color-light: #d7d7d7;
+  --filter-border-radius: 4px;
+  --border-color-image-dark: #0B0B0B;
+  --border-color-image-light: #D7D7D7;
+  --toggler-padding: 5px;
+  --ball-diameter: 20px;
+  --toggler-width: 59px;
+  --toggler-height: 28px;
+  --product-price-color-dark: #547AC5;
+  --product-price-color-light: #1D448E;
+}
+
+.container {
+  max-width: 1202px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+body {
+  background-color: var(--background-primary);
+  color: var(--text-color-primary);
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-regular);
+  font-size: 16px;
+  font-style: normal;
+}

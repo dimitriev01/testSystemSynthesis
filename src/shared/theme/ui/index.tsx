@@ -1,4 +1,3 @@
-import React from 'react';
 import { useEffect, useState } from 'react';
 import { ThemeContext, useTheme } from '../themeProvider';
 import { Themes, supportedThemes } from '../model';
