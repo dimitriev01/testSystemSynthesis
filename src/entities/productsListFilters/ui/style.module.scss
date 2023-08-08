@@ -1,0 +1,64 @@
+@import '../../../app/style.module.scss';
+
+.productsFilters {
+  margin-top: 40px;
+  display: grid;
+  grid-template: 1fr/ repeat(6, 1fr);
+  row-gap: 8px;
+  column-gap: 22px;
+
+  .select {
+    position: relative;
+    cursor: default;
+
+    .selectedValue {
+      font-family: var(--font-secondary);
+      width: 100%;
+      color: var(--filter-text-color);
+      padding: 14px 40px 14px 10px;
+      outline: none;
+      border: 1px solid var(--filter-border-color);
+      transition: var(--transition);
+      border-radius: var(--filter-border-radius);
+    }
+
+    .filterOptions {
+      width: 100%;
+      position: absolute;
+      border-radius: 0px 0px 4px 4px;
+      border: 1px solid var(--filter-border-color);
+      padding: 20px;
+      background-color: var(--background-primary);
+      z-index: 1;
+
+      .filterOption {
+        font-family: var(--font-secondary);
+        line-height: 24px;
+        letter-spacing: 0.15px;
+      }
+    }
+
+    .arrowDrop {
+      position: absolute;
+      right: 12px;
+      top: 12px;
+      pointer-events: none;
+      transition: var(--transition);
+    }
+
+    .arrowDrop.arrowDropOpened {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .productsFilters {
+    margin-top: 30px;
+    grid-template: 1fr/1fr;
+
+    >div {
+      grid-column: initial;
+    }
+  }
+}

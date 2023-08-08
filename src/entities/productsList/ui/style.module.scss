@@ -1,0 +1,23 @@
+.productsList {
+  margin: 15px 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  row-gap: 20px;
+  column-gap: 22px;
+}
+
+.message {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .productsList {
+    grid-template-columns: repeat(2, 1fr);
+
+    .filterCategorySelect,
+    .filterProductsCount,
+    .filterSearch {
+      grid-column: span 2;
+    }
+  }
+}

@@ -1,0 +1,25 @@
+@import '../../../../app/style.module.scss';
+
+.filterSearch {
+  grid-column: span 3;
+  position: relative;
+
+  .searchIcon {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    pointer-events: none;
+  }
+
+  .filterSearchInput {
+    font-family: var(--font-secondary);
+    width: 100%;
+    color: var(--filter-text-color);
+    padding: 14px 40px 14px 10px;
+    outline: none;
+    box-shadow: none;
+    border: 1px solid var(--filter-border-color);
+    transition: var(--transition);
+    border-radius: var(--filter-border-radius);
+  }
+}
