@@ -1,0 +1,67 @@
+html[data-theme='dark'] body {
+  --background-primary: var(--background-primary-dark);
+  --text-color-primary: var(--text-color-primary-dark);
+
+  .productsFilters {
+    --filter-border-color: var(--filter-border-color-dark);
+  }
+
+  .header {
+    --header-border-color: var(--header-border-color-dark);
+  }
+
+  .simpleToggler {
+    --theme-togggler-background: var(--theme-togggler-background-dark);
+
+    .icon {
+      background-image: url('../icon/assets/sun.svg');
+      transform: translateX(0);
+    }
+  }
+
+  .product {
+    .productImage {
+      --border-color-image: var(--border-color-image-dark);
+    }
+
+    .productPrice {
+      --product-price-color: var(--product-price-color-dark);
+    }
+  }
+}
+
+html[data-theme='light'] body {
+  --background-primary: var(--background-primary-light);
+  --text-color-primary: var(--text-color-primary-light);
+
+  .productsFilters {
+    --filter-border-color: var(--filter-border-color-light);
+  }
+
+  .header {
+    --header-border-color: var(--header-border-color-light);
+  }
+
+  .simpleToggler {
+    --theme-togggler-background: var(--theme-togggler-background-light);
+
+    .icon {
+      background-image: url('../icon/assets/moon.svg');
+      transform: translateX(calc(var(--toggler-width) - var(--ball-diameter) - 2.5 * var(--toggler-padding)));
+    }
+
+    .ball {
+      transform: translateX(calc(var(--toggler-width) - var(--ball-diameter) - 13.5 * var(--toggler-padding)));
+    }
+  }
+
+  .product {
+    .productPrice {
+      --product-price-color: var(--product-price-color-light);
+    }
+
+    .productImage {
+      --border-color-image: var(--border-color-image-light);
+    }
+  }
+}

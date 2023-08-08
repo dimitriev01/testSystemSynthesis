@@ -7,9 +7,7 @@ import svgrPlugin from 'vite-plugin-svgr';
 
 export default defineConfig({
   plugins: [
-    react({
-      jsxRuntime: 'classic'
-    }), viteTsconfigPaths(), svgrPlugin(),
+    react({}), viteTsconfigPaths(), svgrPlugin(),
     VitePWA({
       manifest: {
         name: 'Market App',

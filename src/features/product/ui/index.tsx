@@ -1,4 +1,3 @@
-import React from 'react';
 import { IProduct } from '../model';
 import style from './style.module.scss';
 
