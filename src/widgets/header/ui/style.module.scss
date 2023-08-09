@@ -1,7 +1,8 @@
   @import '../../../app/style.module.scss';
 
   .header {
-    padding: 9px 0;
+    padding-top: 8px;
+    padding-bottom: 8px;
     border-bottom: 1px solid var(--header-border-color);
 
     .headerContainer {

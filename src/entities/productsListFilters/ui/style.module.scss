@@ -15,7 +15,7 @@
       font-family: var(--font-secondary);
       width: 100%;
       color: var(--filter-text-color);
-      padding: 14px 40px 14px 10px;
+      padding: var(--filter-padding);
       outline: none;
       border: 1px solid var(--filter-border-color);
       transition: var(--transition);
@@ -27,21 +27,21 @@
       position: absolute;
       border-radius: 0px 0px 4px 4px;
       border: 1px solid var(--filter-border-color);
-      padding: 20px;
+      padding: 15px 20px;
       background-color: var(--background-primary);
       z-index: 1;
+      line-height: 30px;
 
       .filterOption {
         font-family: var(--font-secondary);
-        line-height: 24px;
         letter-spacing: 0.15px;
       }
     }
 
     .arrowDrop {
       position: absolute;
-      right: 12px;
-      top: 12px;
+      right: 10px;
+      top: 13px;
       pointer-events: none;
       transition: var(--transition);
     }

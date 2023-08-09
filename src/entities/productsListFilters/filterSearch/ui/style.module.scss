@@ -6,7 +6,7 @@
 
   .searchIcon {
     position: absolute;
-    right: 12px;
+    right: 10px;
     top: 12px;
     pointer-events: none;
   }
@@ -15,9 +15,8 @@
     font-family: var(--font-secondary);
     width: 100%;
     color: var(--filter-text-color);
-    padding: 14px 40px 14px 10px;
+    padding: var(--filter-padding);
     outline: none;
-    box-shadow: none;
     border: 1px solid var(--filter-border-color);
     transition: var(--transition);
     border-radius: var(--filter-border-radius);

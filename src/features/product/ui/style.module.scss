@@ -22,8 +22,34 @@
     border: 1px solid var(--border-color-image);
   }
 
+  .productImage[src="https://i.dummyjson.com/data/products/1/thumbnail.jpg"] {
+    object-position: -131px;
+  }
+
+  .productImage[src="https://i.dummyjson.com/data/products/8/thumbnail.jpg"] {
+    object-position: -23px;
+  }
+
   .productPrice {
-    font-weight: 800;
+    line-height: 28px;
+    font-weight: var(--font-weight-bold);
     color: var(--product-price-color);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .product {
+    .productTitle {
+      font-size: 14px;
+      margin-top: 9px;
+    }
+
+    .productPrice {
+      line-height: 26px;
+    }
+
+    .productImage[src="https://i.dummyjson.com/data/products/1/thumbnail.jpg"] {
+      object-position: -125px;
+    }
   }
 }
