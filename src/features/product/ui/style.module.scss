@@ -22,14 +22,6 @@
     border: 1px solid var(--border-color-image);
   }
 
-  .productImage[src="https://i.dummyjson.com/data/products/1/thumbnail.jpg"] {
-    object-position: -131px;
-  }
-
-  .productImage[src="https://i.dummyjson.com/data/products/8/thumbnail.jpg"] {
-    object-position: -23px;
-  }
-
   .productPrice {
     line-height: 28px;
     font-weight: var(--font-weight-bold);
@@ -46,10 +38,6 @@
 
     .productPrice {
       line-height: 26px;
-    }
-
-    .productImage[src="https://i.dummyjson.com/data/products/1/thumbnail.jpg"] {
-      object-position: -125px;
     }
   }
 }
