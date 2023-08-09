@@ -1,17 +1,14 @@
-import { ThemeContext } from 'shared/theme/themeProvider';
+import { useTheme } from 'shared/theme';
 import style from './style.module.scss';
-import { useContext } from 'react';
 
 export const ThemeToggler = () => {
-  const context = useContext(ThemeContext);
+  const { theme, setTheme } = useTheme();
 
   const handleSwitchTheme = () => {
-    if (context) {
-      if (context.theme === 'dark') {
-        context.setTheme('light');
-      } else {
-        context.setTheme('dark');
-      }
+    if (theme === 'dark') {
+      setTheme('light');
+    } else {
+      setTheme('dark');
     }
   };
 
