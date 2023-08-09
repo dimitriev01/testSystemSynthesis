@@ -19,10 +19,11 @@
   --filter-border-color-dark: #444;
   --filter-border-color-light: #d7d7d7;
   --filter-border-radius: 4px;
+  --filter-padding: 13px 40px 14px 13px;
   --border-color-image-dark: #0B0B0B;
   --border-color-image-light: #D7D7D7;
-  --toggler-padding: 5px;
-  --ball-diameter: 20px;
+  --toggler-padding: 4.8px;
+  --ball-diameter: 23px;
   --toggler-width: 59px;
   --toggler-height: 28px;
   --product-price-color-dark: #547AC5;
@@ -30,7 +31,7 @@
 }
 
 .container {
-  max-width: 1202px;
+  max-width: 1222px;
   margin: 0 auto;
   padding: 0 10px;
 }

@@ -47,11 +47,11 @@ html[data-theme='light'] body {
 
     .icon {
       background-image: url('../icon/assets/moon.svg');
-      transform: translateX(calc(var(--toggler-width) - var(--ball-diameter) - 2.5 * var(--toggler-padding)));
+      transform: translateX(calc(var(--toggler-width) - var(--ball-diameter) - 1 * var(--toggler-padding)));
     }
 
     .ball {
-      transform: translateX(calc(var(--toggler-width) - var(--ball-diameter) - 13.5 * var(--toggler-padding)));
+      transform: translateX(calc(var(--toggler-width) - var(--ball-diameter) - 13 * var(--toggler-padding)));
     }
   }
 
