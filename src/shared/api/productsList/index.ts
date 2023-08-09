@@ -1,9 +1,8 @@
-import { IProduct } from 'features/product/model';
 import { API_URL } from '../base';
 
-export const getAllProducts = async (): Promise<IProduct[]> => {
+export const getAllProducts = async (limit: number) => {
   const response = await fetch(
-    API_URL + '?select=title,price,thumbnail,category'
+    API_URL + `?limit=${limit}&select=title,price,thumbnail,category`
   );
   const data = await response.json();
   return data.products;

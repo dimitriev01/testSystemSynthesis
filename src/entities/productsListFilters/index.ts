@@ -1,47 +1,18 @@
-import { createEvent, combine } from 'effector';
-import { $products, $productsGetStatuses, fetchProductsFx } from 'entities/productsList/model';
-import { $searchQuery } from './filterSearch/model/filterSearch';
-import { $categories, $selectedCategory, fetchCategoriesFx } from './filterCategory/model/filterCategory';
-import { $countProducts } from './filterProductsCount/model';
+import { combine } from 'effector';
+import { $selectedCategory, } from './filterCategory/model/filterCategory';
+import { $searchedProductsCombined } from './filterSearch/model/filterSearch';
 
 export const $filteredProducts = combine(
-  $productsGetStatuses,
-  $searchQuery,
+  $searchedProductsCombined,
   $selectedCategory,
-  $countProducts,
-  (products, searchQuery, selectedCategory, countProducts) => {
-    let filteredProducts = [...products.data];
-
-    if (searchQuery) {
-      filteredProducts = filteredProducts.filter((product) =>
-        product.title.toLowerCase().includes(searchQuery.toLowerCase())
-      );
-    }
-
-    // if (searchQuery) {
-    //   filteredProducts = filterSearchFx(searchQuery);
-    // }
+  (searchedProductsCombined, selectedCategory) => {
+    let filtredProducts = [...searchedProductsCombined.searchedProducts];
 
     if (selectedCategory) {
-      filteredProducts = filteredProducts.filter(
+      filtredProducts = filtredProducts.filter(
         (product) => product.category === selectedCategory
       );
     }
-
-    filteredProducts = filteredProducts.slice(0, countProducts);
-
-    return filteredProducts;
+    return filtredProducts;
   }
 );
-
-export const initialize = createEvent<void>();
-initialize.watch(() => {
-  fetchProductsFx();
-  fetchCategoriesFx();
-});
-
-$searchQuery.reset(initialize);
-$selectedCategory.reset(initialize);
-$countProducts.reset(initialize);
-$products.reset(initialize);
-$categories.reset(initialize);

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useStore } from 'effector-react';
 import style from './style.module.scss';
 import filtersStyle from '../../ui/style.module.scss';
 import arrowDropDown from './icon/assets/arrowDrop.svg';
 import clsx from 'clsx';
-import { $categories, fetchCategoriesFx, setSelectedCategory } from '../model/filterCategory';
+import { $categories, $selectedCategory, fetchCategoriesFx, setSelectedCategory } from '../model/filterCategory';
 
 interface FilterCategoryProps {
   isMenuCategoryOpened: boolean;
@@ -20,10 +20,9 @@ export const FilterCategory: React.FC<FilterCategoryProps> = ({
   setMenuProductsCountOpened
 }) => {
   const categories = useStore($categories);
-  const [selectedCategory, setSelectedCategoryState] = useState('Category');
+  const selectedCategory = useStore($selectedCategory);
 
   const handleChangeCategory = (category: string) => {
-    setSelectedCategoryState(category);
     setSelectedCategory(category);
     setMenuCategoryOpened(false);
   };
@@ -45,8 +44,7 @@ export const FilterCategory: React.FC<FilterCategoryProps> = ({
     <div onClick={handleOpenMenu} className={clsx(filtersStyle.select, style.filterCategory)}>
       <div>
         <div className={filtersStyle.selectedValue}>
-          {selectedCategory.charAt(0).toUpperCase() +
-            selectedCategory.slice(1)}
+          {selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1) || 'Category'}
         </div>
         <img
           className={clsx(

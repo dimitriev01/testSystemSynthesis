@@ -1,10 +1,6 @@
-import { createEffect, createEvent, createStore } from 'effector';
+import { combine, createEffect, createEvent, createStore, restore } from 'effector';
 import { IProduct } from 'features/product/model';
 import { searchProducts } from 'shared/api/search';
-
-export const filterSearchFx = createEffect<string, IProduct[], Error>({
-  handler: searchProducts,
-});
 
 export const setSearchQuery = createEvent<string>();
 export const $searchQuery = createStore<string>('').on(
@@ -12,7 +8,17 @@ export const $searchQuery = createStore<string>('').on(
   (_, searchQuery) => searchQuery
 );
 
-// export const $searchedProducts = createStore<IProduct[]>([]).on(
-//   filterSearchFx.doneData,
-//   (_, products) => products
-// );
+export const searchProductsFx = createEffect(searchProducts);
+
+export const $fetchSearchError = restore<Error>(searchProductsFx.failData, null);
+
+export const $searchedProducts = createStore<IProduct[]>([]).on(
+  searchProductsFx.doneData,
+  (_, products) => products
+);
+
+export const $searchedProductsCombined = combine({
+  loadingFiltredProducts: searchProductsFx.pending,
+  errorFiltredProducts: $fetchSearchError,
+  searchedProducts: $searchedProducts,
+});

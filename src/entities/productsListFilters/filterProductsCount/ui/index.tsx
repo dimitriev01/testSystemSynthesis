@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import style from './style.module.scss';
 import filtersStyle from '../../ui/style.module.scss';
 import arrowDropDown from './icon/assets/arrowDrop.svg';
 import clsx from 'clsx';
-import { setCountProducts } from '../model';
+import { $countProducts, setCountProducts } from '../model';
+import { useStore } from 'effector-react';
 
 interface FilterProductsCountProps {
   isMenuCategoryOpened: boolean;
@@ -18,11 +19,10 @@ export const FilterProductsCount: React.FC<FilterProductsCountProps> = ({
   isMenuProductsCountOpened,
   setMenuProductsCountOpened
 }) => {
-  const [selectedCountProducts, setCountProductsState] = useState<number>(10);
+  const selectedCountProducts = useStore($countProducts);
 
   const handleCountChange = (сount: number) => {
     setCountProducts(сount);
-    setCountProductsState(сount);
     setMenuProductsCountOpened(false);
   };
 
@@ -39,7 +39,7 @@ export const FilterProductsCount: React.FC<FilterProductsCountProps> = ({
     <div onClick={handleOpenMenu} className={clsx(filtersStyle.select, style.filterProductsCount)}>
       <div>
         <div className={filtersStyle.selectedValue}>
-          {selectedCountProducts}
+          {selectedCountProducts || 10}
         </div>
         <img
           className={clsx(
