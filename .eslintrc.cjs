@@ -15,7 +15,6 @@ module.exports = {
     quotes: ["error", "single"],
     "jsx-quotes": ["error", "prefer-double"],
     indent: ["warn", 2],
-    "max-len": ["error", { code: 120 }],
     semi: ["warn", "always"],
   },
 };

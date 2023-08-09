@@ -9,10 +9,31 @@ export default defineConfig({
   plugins: [
     react({}), viteTsconfigPaths(), svgrPlugin(),
     VitePWA({
+      registerType: 'prompt',
+      includeAssets: ['product_icon.png'],
       manifest: {
         name: 'Market App',
         short_name: 'Market',
+        description: 'A web application has been developed for viewing products from an online store using React, Typescript, Effector',
         display: 'standalone',
+        theme_color: '#ffffff',
+        background_color: '#ffffff',
+        scope: '/',
+        start_url: '/',
+        orientation: 'portrait',
+        icons: [
+          {
+            src: '/product_icon.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: '/product_icon.png',
+            sizes: '180x180',
+            type: 'image/png',
+            purpose: 'apple touch icon',
+          },
+        ]
       }
     }),
   ],
